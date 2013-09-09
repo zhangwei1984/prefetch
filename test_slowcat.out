@@ -1,0 +1,72 @@
+Run md5sum native
+3cdc15327b11f3fcced3f9b5fd99027e  /home/guest/1000M
+2.65user 0.53system 0:10.62elapsed 30%CPU (0avgtext+0avgdata 2624maxresident)k
+2050088inputs+0outputs (1major+205minor)pagefaults 0swaps
+3cdc15327b11f3fcced3f9b5fd99027e  /home/guest/1000M
+2.42user 0.11system 0:02.53elapsed 99%CPU (0avgtext+0avgdata 2640maxresident)k
+0inputs+0outputs (0major+208minor)pagefaults 0swaps
+
+
+Run md5sum with fuse
+3cdc15327b11f3fcced3f9b5fd99027e  mnt//home/guest/1000M
+2.61user 0.41system 0:10.39elapsed 29%CPU (0avgtext+0avgdata 2640maxresident)k
+2048104inputs+0outputs (2major+205minor)pagefaults 0swaps
+3cdc15327b11f3fcced3f9b5fd99027e  mnt//home/guest/1000M
+2.28user 0.51system 0:03.73elapsed 74%CPU (0avgtext+0avgdata 2640maxresident)k
+2048000inputs+0outputs (0major+207minor)pagefaults 0swaps
+kill: 31: No such process
+
+
+
+Run md5sum with prefetching
+3cdc15327b11f3fcced3f9b5fd99027e  mnt//home/guest/1000M
+2.67user 0.45system 0:14.71elapsed 21%CPU (0avgtext+0avgdata 2640maxresident)k
+2048040inputs+0outputs (0major+207minor)pagefaults 0swaps
+3cdc15327b11f3fcced3f9b5fd99027e  mnt//home/guest/1000M
+2.36user 0.40system 0:02.82elapsed 98%CPU (0avgtext+0avgdata 2640maxresident)k
+2048000inputs+0outputs (0major+208minor)pagefaults 0swaps
+
+
+Run slowcat native
+0.02user 0.75system 1:04.84elapsed 1%CPU (0avgtext+0avgdata 6128maxresident)k
+2050024inputs+0outputs (1major+416minor)pagefaults 0swaps
+0.00user 0.25system 0:54.10elapsed 0%CPU (0avgtext+0avgdata 6160maxresident)k
+0inputs+0outputs (0major+419minor)pagefaults 0swaps
+
+
+Run slowcat fusexmp_fh
+0.00user 0.71system 1:02.65elapsed 1%CPU (0avgtext+0avgdata 6160maxresident)k
+2048192inputs+0outputs (2major+417minor)pagefaults 0swaps
+0.00user 0.76system 0:56.13elapsed 1%CPU (0avgtext+0avgdata 6160maxresident)k
+2048016inputs+0outputs (1major+419minor)pagefaults 0swaps
+kill: 65: No such process
+
+
+
+Run slowcat with prefetching
+0.02user 0.73system 1:06.33elapsed 1%CPU (0avgtext+0avgdata 6128maxresident)k
+2048192inputs+0outputs (2major+415minor)pagefaults 0swaps
+got response
+cache_hit_bytes = 1048313856 cache_miss_bytes = 131072 rate = 0.999875
+cnt 7999 read /home/guest/1000M-random inode 262164 size 131072 off 1048444928
+req_queue_cnt = 1
+got response
+cache_hit_bytes = 1048444928 cache_miss_bytes = 131072 rate = 0.999875
+cnt 8000 read /home/guest/1000M-random inode 262164 size 4096 off 1048576000
+req_queue_cnt = 1
+got response
+cache_hit_bytes = 1048444928 cache_miss_bytes = 131072 rate = 0.999875
+0.00user 0.76system 0:55.07elapsed 1%CPU (0avgtext+0avgdata 6160maxresident)k
+2048016inputs+0outputs (1major+418minor)pagefaults 0swaps
+cnt 15999 read /home/guest/1000M-random inode 262164 size 131072 off 1048313856
+Found record already cached ref = 0 data = 0x7f90fca1d000 rc = 131072
+cache_hit_bytes = 2096889856 cache_miss_bytes = 131072 rate = 0.999937
+req_queue_cnt = 1
+cnt 16000 read /home/guest/1000M-random inode 262164 size 131072 off 1048444928
+Found record already cached ref = 0 data = 0x7f90fc9fb000 rc = 131072
+cache_hit_bytes = 2097020928 cache_miss_bytes = 131072 rate = 0.999938
+req_queue_cnt = 0
+cnt 16001 read /home/guest/1000M-random inode 262164 size 4096 off 1048576000
+req_queue_cnt = 1
+
+

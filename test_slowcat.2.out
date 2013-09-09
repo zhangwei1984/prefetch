@@ -1,0 +1,32 @@
+Run md5sum native
+3cdc15327b11f3fcced3f9b5fd99027e  /home/guest/1000M
+2.69user 0.47system 0:10.26elapsed 30%CPU (0avgtext+0avgdata 2624maxresident)k
+2050080inputs+0outputs (1major+205minor)pagefaults 0swaps
+3cdc15327b11f3fcced3f9b5fd99027e  /home/guest/1000M
+2.41user 0.14system 0:02.55elapsed 99%CPU (0avgtext+0avgdata 2624maxresident)k
+0inputs+0outputs (0major+206minor)pagefaults 0swaps
+
+
+Run md5sum with fuse
+3cdc15327b11f3fcced3f9b5fd99027e  mnt//home/guest/1000M
+2.58user 0.45system 0:10.46elapsed 29%CPU (0avgtext+0avgdata 2624maxresident)k
+2048104inputs+0outputs (2major+204minor)pagefaults 0swaps
+3cdc15327b11f3fcced3f9b5fd99027e  mnt//home/guest/1000M
+2.41user 0.42system 0:03.85elapsed 73%CPU (0avgtext+0avgdata 2624maxresident)k
+2048032inputs+0outputs (1major+205minor)pagefaults 0swaps
+
+
+Run md5sum with prefetching
+md5sum: mnt//home/guest/1000M: Transport endpoint is not connected
+Command exited with non-zero status 1
+0.76user 0.12system 0:04.44elapsed 19%CPU (0avgtext+0avgdata 2640maxresident)k
+586320inputs+0outputs (2major+204minor)pagefaults 0swaps
+md5sum: mnt//home/guest/1000M: Transport endpoint is not connected
+Command exited with non-zero status 1
+0.00user 0.03system 0:00.03elapsed 97%CPU (0avgtext+0avgdata 2448maxresident)k
+0inputs+0outputs (0major+194minor)pagefaults 0swaps
+kill: 44: No such process
+
+
+
+Run slowcat native
